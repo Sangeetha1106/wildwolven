@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Wild Wolven - Premium Men's Wear | Born to be Wild | Freedom, Individuality & Comfort">
+    <title>About Us | Wild Wolven</title>
+    
+    <!-- Google Fonts for Luxury Fashion Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global Design System Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Premium Header & Navbar -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container container">
+            <!-- Mobile Toggle Button (Left on Mobile) -->
+            <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Wild Wolven Home">
+                <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                <span class="logo-text">WILD WOLVEN</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    
+                    <!-- Shop Item with Dropdown -->
+                    <li class="nav-item-dropdown">
+                        <a href="shop.html" class="nav-link nav-link-dropdown" id="shopDropdownToggle" aria-expanded="false" aria-haspopup="true">
+                            <span>Shop</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <div class="dropdown-menu" role="menu" aria-label="Shop categories">
+                            <ul class="dropdown-list">
+                                <li><a href="shop.html?category=tshirts" class="dropdown-link" role="menuitem">T-Shirts</a></li>
+                                <li><a href="shop.html?category=shirts" class="dropdown-link" role="menuitem">Shirts</a></li>
+                                <li><a href="shop.html?category=pants" class="dropdown-link" role="menuitem">Pants</a></li>
+                                <li><a href="shop.html?category=hoodies" class="dropdown-link" role="menuitem">Hoodies</a></li>
+                                <li><a href="shop.html?category=track-pants" class="dropdown-link" role="menuitem">Track Pants</a></li>
+                                <li><a href="shop.html?category=shorts" class="dropdown-link" role="menuitem">Shorts</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons -->
+            <div class="header-actions">
+                <button class="action-btn search-btn" aria-label="Search products">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+                <button class="action-btn wishlist-btn" aria-label="View wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <a href="cart.html" class="action-btn cart-btn" aria-label="View shopping cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="action-btn account-btn" aria-label="Account details">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Overlay & Panel -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+        <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo mobile-brand">
+                    <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                    <span class="logo-text">WILD WOLVEN</span>
+                </a>
+                <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    
+                    <li class="mobile-dropdown-item" id="mobileDropdownItem">
+                        <div class="mobile-nav-row">
+                            <a href="shop.html" class="mobile-nav-link">Shop</a>
+                            <button type="button" class="mobile-submenu-toggle" id="mobileShopToggle" aria-expanded="false" aria-label="Toggle shop category submenu">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="submenu-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-submenu" id="mobileShopSubmenu">
+                            <li><a href="shop.html?category=tshirts" class="mobile-submenu-link">T-Shirts</a></li>
+                            <li><a href="shop.html?category=shirts" class="mobile-submenu-link">Shirts</a></li>
+                            <li><a href="shop.html?category=pants" class="mobile-submenu-link">Pants</a></li>
+                            <li><a href="shop.html?category=hoodies" class="mobile-submenu-link">Hoodies</a></li>
+                            <li><a href="shop.html?category=track-pants" class="mobile-submenu-link">Track Pants</a></li>
+                            <li><a href="shop.html?category=shorts" class="mobile-submenu-link">Shorts</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" class="mobile-nav-link active">About Us</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="mobile-nav-divider"></li>
+                    <li>
+                        <a href="shop.html" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span>Wishlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-page-main">
+        <!-- 2. About Hero Section -->
+        <section class="about-hero-section">
+            <div class="container">
+                <div class="about-hero-grid">
+                    <div class="about-hero-content">
+                        <span class="subtitle-gold">ABOUT WILD WOLVEN</span>
+                        <h1 class="about-hero-title">
+                            BORN TO BE<br>
+                            <span class="gold-gradient-text">WILD</span>
+                        </h1>
+                        <p class="about-hero-description">
+                            Wild Wolven is a premium men's clothing brand created for those who believe in freedom, individuality, and modern style.
+                        </p>
+                        <div class="hero-cta-group btn-group">
+                            <a href="shop.html" class="btn btn-primary">EXPLORE COLLECTION</a>
+                            <a href="#our-story" class="btn btn-secondary">OUR STORY</a>
+                        </div>
+                    </div>
+                    <div class="about-hero-image-wrapper">
+                        <div class="about-hero-image-frame">
+                            <img src="images/about-hero.png" alt="Wild Wolven Luxury Fashion Editorial" class="about-hero-image">
+                            <div class="hero-image-overlay"></div>
+                        </div>
+                        <div class="hero-accent-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Our Story Section -->
+        <section class="about-story-section section-padding" id="our-story">
+            <div class="container">
+                <div class="story-grid">
+                    <!-- Left: Story Image -->
+                    <div class="story-image-col">
+                        <div class="story-image-frame">
+                            <img src="images/about-story.png" alt="Wild Wolven Craftsmanship and Vision" class="story-image">
+                            <div class="story-image-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Story Content -->
+                    <div class="story-content-col">
+                        <span class="subtitle-gold">OUR STORY</span>
+                        <h2 class="section-title">MORE THAN CLOTHING</h2>
+                        <div class="gold-divider-sm"></div>
+                        <p class="story-text">
+                            Wild Wolven was created with a simple vision — to bring premium men's fashion together with individuality, comfort, and confidence.
+                        </p>
+                        <p class="story-text">
+                            Every collection is designed for modern men who want clothing that feels as good as it looks. From everyday essentials to statement pieces, Wild Wolven focuses on quality, distinctive designs, and a refined sense of style.
+                        </p>
+                        <p class="story-text story-highlight">
+                            We believe clothing is not just something you wear. It is a reflection of who you are.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Our Values Section -->
+        <section class="about-values-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subtitle-gold">WHAT WE STAND FOR</span>
+                    <h2 class="section-title">THE WILD WOLVEN VALUES</h2>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <div class="values-grid">
+                    <!-- Card 01 -->
+                    <div class="value-card">
+                        <div class="value-card-inner">
+                            <span class="value-number">01</span>
+                            <h3 class="value-title">QUALITY</h3>
+                            <p class="value-desc">
+                                Premium materials and carefully selected fabrics designed for comfort and durability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 02 -->
+                    <div class="value-card">
+                        <div class="value-card-inner">
+                            <span class="value-number">02</span>
+                            <h3 class="value-title">INDIVIDUALITY</h3>
+                            <p class="value-desc">
+                                Original designs created for people who are confident in their own identity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 03 -->
+                    <div class="value-card">
+                        <div class="value-card-inner">
+                            <span class="value-number">03</span>
+                            <h3 class="value-title">COMFORT</h3>
+                            <p class="value-desc">
+                                Modern silhouettes and comfortable fits designed for everyday life.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 04 -->
+                    <div class="value-card">
+                        <div class="value-card-inner">
+                            <span class="value-number">04</span>
+                            <h3 class="value-title">ADVENTURE</h3>
+                            <p class="value-desc">
+                                Inspired by freedom, movement, exploration, and the spirit of the wild.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Brand Statement Section -->
+        <section class="about-statement-section section-padding-sm">
+            <div class="container text-center">
+                <div class="statement-card">
+                    <span class="subtitle-gold">THE WILD WOLVEN MINDSET</span>
+                    <h2 class="statement-title">
+                        FREEDOM.<br>
+                        CONFIDENCE.<br>
+                        <span class="gold-gradient-text">INDIVIDUALITY.</span>
+                    </h2>
+                    <div class="gold-divider"></div>
+                    <p class="statement-desc">
+                        Wear what defines you. Move with confidence. Stay wild.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Call to Action Section -->
+        <section class="about-cta-section section-padding">
+            <div class="container text-center">
+                <div class="cta-box">
+                    <span class="subtitle-gold">THE NEXT CHAPTER</span>
+                    <h2 class="cta-title">FIND YOUR WILD</h2>
+                    <p class="cta-text">
+                        Explore the latest Wild Wolven collection and discover your next statement piece.
+                    </p>
+                    <div class="cta-btn-wrapper">
+                        <a href="shop.html" class="btn btn-primary btn-cta-gold">SHOP THE COLLECTION</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="brand-logo footer-logo">
+                        <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                        <span class="logo-text">WILD WOLVEN</span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        "Premium men's wear designed for freedom, adventure, and individuality."
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Shop Categories -->
+                <div class="footer-col">
+                    <h4 class="footer-title">SHOP</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=tshirts">T-Shirts</a></li>
+                        <li><a href="shop.html?category=shirts">Shirts</a></li>
+                        <li><a href="shop.html?category=pants">Pants</a></li>
+                        <li><a href="shop.html?category=hoodies">Hoodies</a></li>
+                        <li><a href="shop.html?category=track-pants">Track Pants</a></li>
+                        <li><a href="shop.html?category=shorts">Shorts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">CONTACT</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:hellowildwolven@gmail.com">hellowildwolven@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 WILD WOLVEN. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

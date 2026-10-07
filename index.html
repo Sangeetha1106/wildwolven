@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wild Wolven - Premium Men's Wear | Freedom, Adventure, and Individuality">
+    <title>Wild Wolven | Premium Men's Wear</title>
+    
+    <!-- Google Fonts for Luxury Fashion Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global Design System Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Premium Header & Navbar (Updated Step) -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container container">
+            <!-- Mobile Toggle Button (Left on Mobile) -->
+            <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Wild Wolven Home">
+                <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                <span class="logo-text">WILD WOLVEN</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    
+                    <!-- Shop Item with Dropdown -->
+                    <li class="nav-item-dropdown">
+                        <a href="shop.html" class="nav-link nav-link-dropdown" id="shopDropdownToggle" aria-expanded="false" aria-haspopup="true">
+                            <span>Shop</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <div class="dropdown-menu" role="menu" aria-label="Shop categories">
+                            <ul class="dropdown-list">
+                                <li><a href="shop.html?category=tshirts" class="dropdown-link" role="menuitem">T-Shirts</a></li>
+                                <li><a href="shop.html?category=shirts" class="dropdown-link" role="menuitem">Shirts</a></li>
+                                <li><a href="shop.html?category=pants" class="dropdown-link" role="menuitem">Pants</a></li>
+                                <li><a href="shop.html?category=hoodies" class="dropdown-link" role="menuitem">Hoodies</a></li>
+                                <li><a href="shop.html?category=track-pants" class="dropdown-link" role="menuitem">Track Pants</a></li>
+                                <li><a href="shop.html?category=shorts" class="dropdown-link" role="menuitem">Shorts</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons -->
+            <div class="header-actions">
+                <button class="action-btn search-btn" aria-label="Search products">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+                <button class="action-btn wishlist-btn" aria-label="View wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <a href="cart.html" class="action-btn cart-btn" aria-label="View shopping cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="action-btn account-btn" aria-label="Account details">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Overlay & Panel -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+        <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo mobile-brand">
+                    <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                    <span class="logo-text">WILD WOLVEN</span>
+                </a>
+                <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    
+                    <li class="mobile-dropdown-item" id="mobileDropdownItem">
+                        <div class="mobile-nav-row">
+                            <a href="shop.html" class="mobile-nav-link">Shop</a>
+                            <button type="button" class="mobile-submenu-toggle" id="mobileShopToggle" aria-expanded="false" aria-label="Toggle shop category submenu">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="submenu-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-submenu" id="mobileShopSubmenu">
+                            <li><a href="shop.html?category=tshirts" class="mobile-submenu-link">T-Shirts</a></li>
+                            <li><a href="shop.html?category=shirts" class="mobile-submenu-link">Shirts</a></li>
+                            <li><a href="shop.html?category=pants" class="mobile-submenu-link">Pants</a></li>
+                            <li><a href="shop.html?category=hoodies" class="mobile-submenu-link">Hoodies</a></li>
+                            <li><a href="shop.html?category=track-pants" class="mobile-submenu-link">Track Pants</a></li>
+                            <li><a href="shop.html?category=shorts" class="mobile-submenu-link">Shorts</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="mobile-nav-divider"></li>
+                    <li>
+                        <a href="#" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span>Wishlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Premium Hero Section Banner -->
+        <section class="hero-section-banner" id="hero">
+            <a href="shop.html" class="hero-banner-wrap" aria-label="Shop Wild Wolven Premium Streetwear Collection">
+                <img src="images/homepage/homepage.png" alt="Wild Wolven - Wear The Wild Luxury Apparel Campaign" class="hero-banner-image" loading="eager">
+            </a>
+        </section>
+
+        <!-- Shop by Category Section (Step 5) -->
+        <section class="category-section section-padding" id="categories">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header text-center">
+                    <span class="subtitle-gold">EXPLORE THE COLLECTION</span>
+                    <h2 class="section-title">SHOP BY CATEGORY</h2>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- Category Grid (6 Cards) -->
+                <div class="category-grid">
+                    <!-- Card 1: T-SHIRTS -->
+                    <a href="shop.html?category=tshirts" class="category-card" aria-label="Explore T-Shirts Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-tshirts.jpg" alt="Wild Wolven Premium T-Shirts Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">T-SHIRTS</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: SHIRTS -->
+                    <a href="shop.html?category=shirts" class="category-card" aria-label="Explore Shirts Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-shirts.jpg" alt="Wild Wolven Luxury Shirts Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">SHIRTS</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: PANTS -->
+                    <a href="shop.html?category=pants" class="category-card" aria-label="Explore Pants Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-pants.jpg" alt="Wild Wolven Tailored Pants Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">PANTS</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Card 4: HOODIES -->
+                    <a href="shop.html?category=hoodies" class="category-card" aria-label="Explore Hoodies Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-hoodies.jpg" alt="Wild Wolven Luxury Hoodies Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">HOODIES</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Card 5: TRACK PANTS -->
+                    <a href="shop.html?category=track-pants" class="category-card" aria-label="Explore Track Pants Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-trackpants.jpg" alt="Wild Wolven Luxury Track Pants Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">TRACK PANTS</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Card 6: SHORTS -->
+                    <a href="shop.html?category=shorts" class="category-card" aria-label="Explore Shorts Collection">
+                        <div class="category-image-wrapper">
+                            <img src="images/category-shorts.jpg" alt="Wild Wolven Tailored Shorts Collection" class="category-image" loading="lazy">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-name">SHORTS</h3>
+                            <span class="category-action">
+                                <span>EXPLORE</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Product Section (Step 6) -->
+        <section class="products-section section-padding" id="new-arrivals">
+            <div class="container">
+                <!-- Section Top Header & Action Link -->
+                <div class="products-section-header">
+                    <div class="header-left">
+                        <span class="subtitle-gold">NEW ARRIVALS</span>
+                        <h2 class="section-title">THE LATEST DROP</h2>
+                        <p class="section-description">Discover our latest premium men's styles, designed for everyday confidence.</p>
+                    </div>
+                    <div class="header-right">
+                        <a href="shop.html" class="view-all-btn">
+                            <span>VIEW ALL PRODUCTS</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Products Grid (8 Sample Products) -->
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">NEW</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Essential Black Oversized T-Shirt to wishlist" data-id="1">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=1" class="product-image-link">
+                                <img src="images/products/tshirt-01.jpg" alt="Essential Black Oversized T-Shirt" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">T-Shirts</span>
+                            <h3 class="product-title" title="Essential Black Oversized T-Shirt"><a href="product.html?id=1">Essential Black Oversized T-Shirt</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">5.0 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹1,499</span>
+                                    <span class="original-price">₹1,999</span>
+                                </div>
+                                <span class="discount-badge">25% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="1" data-name="Essential Black Oversized T-Shirt">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">BEST SELLER</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Urban Gold Graphic T-Shirt to wishlist" data-id="2">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=2" class="product-image-link">
+                                <img src="images/products/tshirt-02.jpg" alt="Urban Gold Graphic T-Shirt" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">T-Shirts</span>
+                            <h3 class="product-title" title="Urban Gold Graphic T-Shirt"><a href="product.html?id=2">Urban Gold Graphic T-Shirt</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">4.9 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹1,699</span>
+                                    <span class="original-price">₹2,199</span>
+                                </div>
+                                <span class="discount-badge">22% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="2" data-name="Urban Gold Graphic T-Shirt">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <button class="wishlist-toggle-btn" aria-label="Add Premium Classic Black Shirt to wishlist" data-id="3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=3" class="product-image-link">
+                                <img src="images/products/shirt-01.jpg" alt="Premium Classic Black Shirt" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Shirts</span>
+                            <h3 class="product-title" title="Premium Classic Black Shirt"><a href="product.html?id=3">Premium Classic Black Shirt</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">5.0 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹2,499</span>
+                                    <span class="original-price">₹3,299</span>
+                                </div>
+                                <span class="discount-badge">24% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="3" data-name="Premium Classic Black Shirt">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">LIMITED</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Signature Relaxed Fit Shirt to wishlist" data-id="4">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=4" class="product-image-link">
+                                <img src="images/products/shirt-02.jpg" alt="Signature Relaxed Fit Shirt" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Shirts</span>
+                            <h3 class="product-title" title="Signature Relaxed Fit Shirt"><a href="product.html?id=4">Signature Relaxed Fit Shirt</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">4.8 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹2,799</span>
+                                    <span class="original-price">₹3,499</span>
+                                </div>
+                                <span class="discount-badge">20% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="4" data-name="Signature Relaxed Fit Shirt">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 5 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">BEST SELLER</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Wild Wolven Cargo Pants to wishlist" data-id="5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=5" class="product-image-link">
+                                <img src="images/products/pants-01.jpg" alt="Wild Wolven Cargo Pants" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Pants</span>
+                            <h3 class="product-title" title="Wild Wolven Cargo Pants"><a href="product.html?id=5">Wild Wolven Cargo Pants</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">5.0 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹3,199</span>
+                                    <span class="original-price">₹3,999</span>
+                                </div>
+                                <span class="discount-badge">20% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="5" data-name="Wild Wolven Cargo Pants">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 6 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">NEW</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Premium Black Track Pants to wishlist" data-id="6">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=6" class="product-image-link">
+                                <img src="images/products/trackpants-01.jpg" alt="Premium Black Track Pants" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Track Pants</span>
+                            <h3 class="product-title" title="Premium Black Track Pants"><a href="product.html?id=6">Premium Black Track Pants</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">4.9 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹2,299</span>
+                                    <span class="original-price">₹2,999</span>
+                                </div>
+                                <span class="discount-badge">23% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="6" data-name="Premium Black Track Pants">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 7 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <span class="product-tag tag-gold">LIMITED</span>
+                            <button class="wishlist-toggle-btn" aria-label="Add Signature Wolf Hoodie to wishlist" data-id="7">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=7" class="product-image-link">
+                                <img src="images/products/hoodie-01.jpg" alt="Signature Wolf Hoodie" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Hoodies</span>
+                            <h3 class="product-title" title="Signature Wolf Hoodie"><a href="product.html?id=7">Signature Wolf Hoodie</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">5.0 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹3,499</span>
+                                    <span class="original-price">₹4,499</span>
+                                </div>
+                                <span class="discount-badge">22% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="7" data-name="Signature Wolf Hoodie">ADD TO CART</button>
+                        </div>
+                    </article>
+
+                    <!-- Product 8 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <button class="wishlist-toggle-btn" aria-label="Add Essential Street Shorts to wishlist" data-id="8">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </button>
+                            <a href="product.html?id=8" class="product-image-link">
+                                <img src="images/products/shorts-01.jpg" alt="Essential Street Shorts" class="product-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Shorts</span>
+                            <h3 class="product-title" title="Essential Street Shorts"><a href="product.html?id=8">Essential Street Shorts</a></h3>
+                            <div class="product-rating">
+                                <span class="rating-badge">4.8 ★</span>
+                                <span class="rating-val">Reviews</span>
+                            </div>
+                            <div class="product-price-row">
+                                <div class="price-box">
+                                    <span class="current-price">₹1,799</span>
+                                    <span class="original-price">₹2,299</span>
+                                </div>
+                                <span class="discount-badge">21% OFF</span>
+                            </div>
+                            <button class="btn btn-add-cart" data-id="8" data-name="Essential Street Shorts">ADD TO CART</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="brand-logo footer-logo">
+                        <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                        <span class="logo-text">WILD WOLVEN</span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        "Premium men's wear designed for freedom, adventure, and individuality."
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Shop Categories -->
+                <div class="footer-col">
+                    <h4 class="footer-title">SHOP</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=tshirts">T-Shirts</a></li>
+                        <li><a href="shop.html?category=shirts">Shirts</a></li>
+                        <li><a href="shop.html?category=pants">Pants</a></li>
+                        <li><a href="shop.html?category=hoodies">Hoodies</a></li>
+                        <li><a href="shop.html?category=track-pants">Track Pants</a></li>
+                        <li><a href="shop.html?category=shorts">Shorts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">CONTACT</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:hellowildwolven@gmail.com">hellowildwolven@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+917306771253">+91 73067 71253</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 WILD WOLVEN. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

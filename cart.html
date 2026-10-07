@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wild Wolven - Shopping Cart | Review Your Selection">
+    <title>Shopping Cart | Wild Wolven</title>
+    
+    <!-- Google Fonts for Luxury Fashion Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global Design System Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Premium Header & Navbar -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container container">
+            <!-- Mobile Toggle Button (Left on Mobile) -->
+            <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Wild Wolven Home">
+                <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                <span class="logo-text">WILD WOLVEN</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    
+                    <!-- Shop Item with Dropdown -->
+                    <li class="nav-item-dropdown">
+                        <a href="shop.html" class="nav-link nav-link-dropdown" id="shopDropdownToggle" aria-expanded="false" aria-haspopup="true">
+                            <span>Shop</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <div class="dropdown-menu" role="menu" aria-label="Shop categories">
+                            <ul class="dropdown-list">
+                                <li><a href="shop.html?category=tshirts" class="dropdown-link" role="menuitem">T-Shirts</a></li>
+                                <li><a href="shop.html?category=shirts" class="dropdown-link" role="menuitem">Shirts</a></li>
+                                <li><a href="shop.html?category=pants" class="dropdown-link" role="menuitem">Pants</a></li>
+                                <li><a href="shop.html?category=hoodies" class="dropdown-link" role="menuitem">Hoodies</a></li>
+                                <li><a href="shop.html?category=track-pants" class="dropdown-link" role="menuitem">Track Pants</a></li>
+                                <li><a href="shop.html?category=shorts" class="dropdown-link" role="menuitem">Shorts</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons -->
+            <div class="header-actions">
+                <button class="action-btn search-btn" aria-label="Search products">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+                <button class="action-btn wishlist-btn" aria-label="View wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <a href="cart.html" class="action-btn cart-btn" aria-label="View shopping cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="action-btn account-btn" aria-label="Account details">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Overlay & Panel -->
+        <div class="mobile-drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+        <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo mobile-brand">
+                    <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                    <span class="logo-text">WILD WOLVEN</span>
+                </a>
+                <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    
+                    <li class="mobile-dropdown-item" id="mobileDropdownItem">
+                        <div class="mobile-nav-row">
+                            <a href="shop.html" class="mobile-nav-link">Shop</a>
+                            <button type="button" class="mobile-submenu-toggle" id="mobileShopToggle" aria-expanded="false" aria-label="Toggle shop category submenu">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="submenu-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-submenu" id="mobileShopSubmenu">
+                            <li><a href="shop.html?category=tshirts" class="mobile-submenu-link">T-Shirts</a></li>
+                            <li><a href="shop.html?category=shirts" class="mobile-submenu-link">Shirts</a></li>
+                            <li><a href="shop.html?category=pants" class="mobile-submenu-link">Pants</a></li>
+                            <li><a href="shop.html?category=hoodies" class="mobile-submenu-link">Hoodies</a></li>
+                            <li><a href="shop.html?category=track-pants" class="mobile-submenu-link">Track Pants</a></li>
+                            <li><a href="shop.html?category=shorts" class="mobile-submenu-link">Shorts</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="mobile-nav-divider"></li>
+                    <li>
+                        <a href="#" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span>Wishlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile-nav-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page-main">
+        <!-- Cart Page Banner -->
+        <section class="cart-header-section">
+            <div class="container text-center">
+                <span class="subtitle-gold">MY SELECTION</span>
+                <h1 class="cart-page-title">YOUR CART</h1>
+                <p class="cart-page-subtitle">Review your selected items before checkout.</p>
+                <div class="gold-divider"></div>
+            </div>
+        </section>
+
+        <!-- Cart Content Section -->
+        <section class="cart-content-section section-padding-sm">
+            <div class="container">
+                <!-- Active Cart Grid Layout -->
+                <div class="cart-grid" id="activeCartGrid">
+                    <!-- Left: Cart Items List -->
+                    <div class="cart-items-container" id="cartItemsList">
+                        <!-- Dynamic Cart Items Rendered by JS -->
+                    </div>
+
+                    <!-- Right: Sticky Order Summary Card -->
+                    <div class="cart-summary-wrapper">
+                        <div class="cart-summary-card">
+                            <h2 class="summary-card-title">CART SUMMARY</h2>
+                            <div class="gold-divider-sm"></div>
+
+                            <div class="summary-row">
+                                <span class="summary-label">Subtotal</span>
+                                <span class="summary-val" id="summarySubtotal">₹0</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span class="summary-label">Delivery</span>
+                                <span class="summary-val text-gold">FREE</span>
+                            </div>
+
+                            <div class="gold-divider-sm"></div>
+
+                            <div class="summary-row total-row">
+                                <span class="total-label">TOTAL</span>
+                                <span class="total-val" id="summaryTotal">₹0</span>
+                            </div>
+
+                            <button type="button" class="btn btn-primary btn-checkout-proceed" id="btnProceedCheckout">
+                                PROCEED TO CHECKOUT
+                            </button>
+
+                            <div class="summary-perks">
+                                <div class="perk-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    <span>Secure Encrypted Checkout</span>
+                                </div>
+                                <div class="perk-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                    <span>Free Express Delivery Across India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty Cart State -->
+                <div class="empty-cart-container" id="emptyCartContainer" style="display: none;">
+                    <div class="empty-cart-card text-center">
+                        <div class="empty-cart-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        </div>
+                        <h2 class="empty-cart-title">YOUR CART IS EMPTY</h2>
+                        <p class="empty-cart-desc">Looks like you haven't added anything yet.</p>
+                        <a href="index.html" class="btn btn-secondary btn-continue-shopping">CONTINUE SHOPPING</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="brand-logo footer-logo">
+                        <img src="images/logo.png" alt="WILD WOLVEN Emblem" class="logo-img">
+                        <span class="logo-text">WILD WOLVEN</span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        "Premium men's wear designed for freedom, adventure, and individuality."
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Shop Categories -->
+                <div class="footer-col">
+                    <h4 class="footer-title">SHOP</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=tshirts">T-Shirts</a></li>
+                        <li><a href="shop.html?category=shirts">Shirts</a></li>
+                        <li><a href="shop.html?category=pants">Pants</a></li>
+                        <li><a href="shop.html?category=hoodies">Hoodies</a></li>
+                        <li><a href="shop.html?category=track-pants">Track Pants</a></li>
+                        <li><a href="shop.html?category=shorts">Shorts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">CONTACT</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:hellowildwolven@gmail.com">hellowildwolven@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+917306771253">+91 73067 71253</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 WILD WOLVEN. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

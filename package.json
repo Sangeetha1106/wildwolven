@@ -1,0 +1,13 @@
+{
+  "name": "wild-wolven",
+  "version": "1.0.0",
+  "description": "Wild Wolven | Premium Men's Wear",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
