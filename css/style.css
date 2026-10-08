@@ -2400,7 +2400,7 @@ img, video {
         z-index: 2;
     }
 
-    .brand-logo {
+    .site-header .brand-logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -2411,6 +2411,18 @@ img, video {
         white-space: nowrap;
         max-width: 65%;
         justify-content: center;
+    }
+
+    .footer-col .brand-logo,
+    .mobile-drawer-header .brand-logo {
+        position: static !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+        margin-bottom: 1.25rem !important;
     }
 
     .logo-text {
@@ -3417,8 +3429,10 @@ img, video {
 }
 
 /* Light Mode Typography & Component Adaptations */
+/* Light Mode Typography & Component Adaptations */
 [data-theme="light"] .subtitle-gold {
     color: #B8822A !important;
+    font-weight: 800 !important;
     text-shadow: none !important;
 }
 
@@ -3439,12 +3453,14 @@ img, video {
 [data-theme="light"] .empty-cart-title,
 [data-theme="light"] .cta-title,
 [data-theme="light"] .value-title,
+[data-theme="light"] .footer-title,
 [data-theme="light"] .checkout-card-title,
 [data-theme="light"] .summary-card-title,
 [data-theme="light"] .cart-item-title a,
 [data-theme="light"] .product-title a,
 [data-theme="light"] .category-name {
     color: #0F172A !important;
+    font-weight: 800 !important;
     text-shadow: none !important;
 }
 
@@ -3463,7 +3479,6 @@ img, video {
 [data-theme="light"] .cta-text,
 [data-theme="light"] .statement-desc,
 [data-theme="light"] .footer-brand-desc,
-[data-theme="light"] .footer-links a,
 [data-theme="light"] .form-label,
 [data-theme="light"] .checkout-page-subtitle,
 [data-theme="light"] .delivery-option-title,
@@ -3474,12 +3489,32 @@ img, video {
 [data-theme="light"] .summary-row,
 [data-theme="light"] .trust-item,
 [data-theme="light"] .cart-item-meta {
-    color: #1E293B !important;
+    color: #0F172A !important;
+    font-weight: 500 !important;
     text-shadow: none !important;
 }
 
+[data-theme="light"] .footer-links a,
+[data-theme="light"] .footer-contact-list a,
+[data-theme="light"] .footer-contact-list li {
+    color: #0F172A !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .footer-links a:hover,
+[data-theme="light"] .footer-contact-list a:hover {
+    color: #B8822A !important;
+}
+
+[data-theme="light"] .copyright-text {
+    color: #1E293B !important;
+    font-weight: 600 !important;
+}
+
 [data-theme="light"] .nav-link {
-    color: #334155 !important;
+    color: #0F172A !important;
+    font-weight: 700 !important;
 }
 
 [data-theme="light"] .nav-link:hover,
@@ -3503,14 +3538,6 @@ img, video {
     border-top: 1px solid rgba(184, 130, 42, 0.3);
 }
 
-[data-theme="light"] .footer-links a {
-    color: #334155 !important;
-}
-
-[data-theme="light"] .footer-links a:hover {
-    color: #B8822A !important;
-}
-
 [data-theme="light"] .mobile-drawer {
     background-color: #FFFFFF;
     color: #0F172A;
@@ -3519,6 +3546,7 @@ img, video {
 
 [data-theme="light"] .mobile-nav-link {
     color: #0F172A !important;
+    font-weight: 700 !important;
 }
 
 [data-theme="light"] .mobile-nav-link:hover,
@@ -3528,7 +3556,8 @@ img, video {
 }
 
 [data-theme="light"] .mobile-submenu-link {
-    color: #475569 !important;
+    color: #0F172A !important;
+    font-weight: 600 !important;
 }
 
 [data-theme="light"] .mobile-submenu-link:hover,
@@ -3537,17 +3566,18 @@ img, video {
 }
 
 [data-theme="light"] .mobile-bottom-nav {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.96);
     border-top: 1px solid rgba(184, 130, 42, 0.25);
 }
 
 [data-theme="light"] .mobile-bottom-nav-item {
-    color: #64748B;
+    color: #1E293B !important;
+    font-weight: 600 !important;
 }
 
 [data-theme="light"] .mobile-bottom-nav-item.active,
 [data-theme="light"] .mobile-bottom-nav-item:hover {
-    color: #B8822A;
+    color: #B8822A !important;
 }
 
 [data-theme="light"] .form-input,
