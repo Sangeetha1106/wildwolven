@@ -147,6 +147,37 @@
             <div class="container">
 
 
+                <!-- Filter & Controls Bar -->
+                <div class="filter-controls">
+                    <div class="filter-pills">
+                        <button type="button" class="filter-pill active" data-category="all">ALL</button>
+                        <button type="button" class="filter-pill" data-category="tshirts">T-SHIRTS</button>
+                        <button type="button" class="filter-pill" data-category="shirts">SHIRTS</button>
+                        <button type="button" class="filter-pill" data-category="pants">PANTS</button>
+                        <button type="button" class="filter-pill" data-category="hoodies">HOODIES</button>
+                        <button type="button" class="filter-pill" data-category="track-pants">TRACK PANTS</button>
+                        <button type="button" class="filter-pill" data-category="shorts">SHORTS</button>
+                    </div>
+
+                    <div class="filter-actions-right">
+                        <div class="search-box-wrapper">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon-inside"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="text" id="shopSearchInput" class="shop-search-input" placeholder="Search products...">
+                            <button type="button" id="clearSearchBtn" class="clear-search-btn" style="display: none;" aria-label="Clear search">&times;</button>
+                        </div>
+
+                        <div class="sort-select-wrapper">
+                            <select id="sortSelect" class="sort-select" aria-label="Sort products">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="name-az">Name: A to Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 4 & 5 & 6. Product Grid -->
                 <div class="product-grid" id="shopProductGrid">
                     <!-- Dynamic Product Cards rendered by JS -->
