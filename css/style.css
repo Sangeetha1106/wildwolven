@@ -20,15 +20,15 @@
     --gold-gradient: linear-gradient(135deg, #F5D77F 0%, #C9974C 50%, #9E7227 100%);
     --gold-btn-gradient: linear-gradient(135deg, #D4AF37 0%, #C9974C 100%);
 
-    --white: #F4F4F6;
+    --white: #FFFFFF;
     --white-pure: #FFFFFF;
-    --gray: #A1A1AA;
-    --gray-muted: #71717A;
+    --gray: #CBD5E1;
+    --gray-muted: #94A3B8;
     --gray-dark: #27272A;
 
-    --border: rgba(201, 151, 76, 0.2);
+    --border: rgba(201, 151, 76, 0.25);
     --border-hover: rgba(229, 193, 88, 0.45);
-    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-subtle: rgba(255, 255, 255, 0.1);
 
     /* Typography */
     --font-heading: 'Cinzel', serif;
@@ -59,19 +59,19 @@
     --gold-light: #9E6C1C;
     --gold-bright: #C9953D;
     --gold-dark: #7A510F;
-    --gold-glow: rgba(184, 130, 42, 0.2);
+    --gold-glow: rgba(184, 130, 42, 0.15);
     --gold-gradient: linear-gradient(135deg, #C9953D 0%, #B8822A 50%, #7A510F 100%);
     --gold-btn-gradient: linear-gradient(135deg, #C9953D 0%, #B8822A 100%);
 
     --white: #0F172A;
-    --white-pure: #000000;
-    --gray: #475569;
-    --gray-muted: #64748B;
+    --white-pure: #020617;
+    --gray: #1E293B;
+    --gray-muted: #334155;
     --gray-dark: #E2E8F0;
 
-    --border: rgba(184, 130, 42, 0.25);
-    --border-hover: rgba(184, 130, 42, 0.5);
-    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border: rgba(184, 130, 42, 0.3);
+    --border-hover: rgba(184, 130, 42, 0.6);
+    --border-subtle: rgba(0, 0, 0, 0.1);
 
     --gold-shadow: 0 6px 20px rgba(184, 130, 42, 0.2);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -3417,6 +3417,12 @@ img, video {
     text-shadow: none !important;
 }
 
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
 [data-theme="light"] .hero-title,
 [data-theme="light"] .shop-title,
 [data-theme="light"] .about-hero-title,
@@ -3425,11 +3431,19 @@ img, video {
 [data-theme="light"] .statement-title,
 [data-theme="light"] .quick-contact-title,
 [data-theme="light"] .empty-shop-title,
-[data-theme="light"] .empty-cart-title {
+[data-theme="light"] .empty-cart-title,
+[data-theme="light"] .cta-title,
+[data-theme="light"] .value-title,
+[data-theme="light"] .checkout-card-title,
+[data-theme="light"] .summary-card-title,
+[data-theme="light"] .cart-item-title a,
+[data-theme="light"] .product-title a,
+[data-theme="light"] .category-name {
     color: #0F172A !important;
     text-shadow: none !important;
 }
 
+[data-theme="light"] p,
 [data-theme="light"] .hero-description,
 [data-theme="light"] .shop-description,
 [data-theme="light"] .about-hero-description,
@@ -3438,8 +3452,24 @@ img, video {
 [data-theme="light"] .quick-contact-desc,
 [data-theme="light"] .story-card-text,
 [data-theme="light"] .value-card-text,
-[data-theme="light"] .mindset-card-text {
-    color: #475569 !important;
+[data-theme="light"] .mindset-card-text,
+[data-theme="light"] .story-text,
+[data-theme="light"] .value-desc,
+[data-theme="light"] .cta-text,
+[data-theme="light"] .statement-desc,
+[data-theme="light"] .footer-brand-desc,
+[data-theme="light"] .footer-links a,
+[data-theme="light"] .form-label,
+[data-theme="light"] .checkout-page-subtitle,
+[data-theme="light"] .delivery-option-title,
+[data-theme="light"] .delivery-option-sub,
+[data-theme="light"] .payment-tab-desc,
+[data-theme="light"] .checkout-item-name,
+[data-theme="light"] .checkout-item-meta,
+[data-theme="light"] .summary-row,
+[data-theme="light"] .trust-item,
+[data-theme="light"] .cart-item-meta {
+    color: #1E293B !important;
     text-shadow: none !important;
 }
 
@@ -3466,6 +3496,14 @@ img, video {
 [data-theme="light"] .site-footer {
     background-color: #F1F5F9;
     border-top: 1px solid rgba(184, 130, 42, 0.3);
+}
+
+[data-theme="light"] .footer-links a {
+    color: #334155 !important;
+}
+
+[data-theme="light"] .footer-links a:hover {
+    color: #B8822A !important;
 }
 
 [data-theme="light"] .mobile-drawer {
@@ -3528,22 +3566,26 @@ img, video {
 [data-theme="light"] .value-card,
 [data-theme="light"] .statement-card,
 [data-theme="light"] .contact-info-card,
-[data-theme="light"] .contact-form-card {
-    background-color: #FFFFFF;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+[data-theme="light"] .contact-form-card,
+[data-theme="light"] .cta-box,
+[data-theme="light"] .story-highlight {
+    background-color: #FFFFFF !important;
+    border-color: rgba(184, 130, 42, 0.3) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] .product-title a,
-[data-theme="light"] .cart-item-title a,
-[data-theme="light"] .category-name,
-[data-theme="light"] .value-title,
-[data-theme="light"] .why-title,
-[data-theme="light"] .contact-card-label,
-[data-theme="light"] .form-title,
-[data-theme="light"] .summary-card-title,
-[data-theme="light"] .checkout-card-title,
-[data-theme="light"] .checkout-item-name {
-    color: #0F172A;
+[data-theme="light"] .about-hero-section,
+[data-theme="light"] .about-values-section,
+[data-theme="light"] .about-cta-section,
+[data-theme="light"] .contact-cards-section,
+[data-theme="light"] .checkout-page-main {
+    background-color: #F8FAFC !important;
+}
+
+[data-theme="light"] .about-story-section,
+[data-theme="light"] .about-statement-section,
+[data-theme="light"] .contact-form-section {
+    background-color: #FFFFFF !important;
 }
 
 /* Theme Toggle Button Styling */
@@ -3670,7 +3712,7 @@ img, video {
 .about-hero-section {
     position: relative;
     padding: 5rem 0 4rem;
-    background: radial-gradient(circle at 70% 30%, rgba(201, 149, 61, 0.07) 0%, transparent 60%), #050505;
+    background: radial-gradient(circle at 70% 30%, var(--gold-glow) 0%, transparent 60%), var(--black);
     border-bottom: 1px solid var(--border);
     overflow: hidden;
 }
@@ -3693,12 +3735,13 @@ img, video {
     line-height: 1.15;
     letter-spacing: 0.1em;
     margin-bottom: 1.5rem;
+    color: var(--white);
 }
 
 .about-hero-description {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #E2E8F0;
+    color: var(--gray);
     max-width: 580px;
     margin-bottom: 2.5rem;
 }
@@ -3713,7 +3756,8 @@ img, video {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(201, 149, 61, 0.15);
+    background-color: var(--card-black);
+    box-shadow: var(--card-shadow);
 }
 
 .about-hero-image {
@@ -3731,7 +3775,7 @@ img, video {
 .hero-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(5, 5, 5, 0.4) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -3766,7 +3810,8 @@ img, video {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    background-color: var(--card-black);
+    box-shadow: var(--card-shadow);
 }
 
 .story-image {
@@ -3784,7 +3829,7 @@ img, video {
 .story-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 60%, rgba(5, 5, 5, 0.5) 100%);
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .gold-divider-sm {
@@ -3801,16 +3846,16 @@ img, video {
 .story-text {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #CBD5E1;
+    color: var(--gray);
     margin-bottom: 1.25rem;
 }
 
 .story-highlight {
     padding: 1.25rem 1.5rem;
-    background-color: rgba(201, 149, 61, 0.08);
+    background-color: var(--gold-glow);
     border-left: 3px solid var(--gold);
     color: var(--white);
-    font-weight: 500;
+    font-weight: 600;
     font-style: italic;
     margin-top: 1.75rem;
     margin-bottom: 0;
@@ -3844,14 +3889,14 @@ img, video {
 .value-card:hover {
     transform: translateY(-6px);
     border-color: var(--gold);
-    box-shadow: 0 12px 35px rgba(201, 149, 61, 0.18);
+    box-shadow: var(--gold-shadow);
 }
 
 .value-number {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
@@ -3868,14 +3913,14 @@ img, video {
 
 .value-desc {
     font-size: 0.95rem;
-    color: #94A3B8;
+    color: var(--gray);
     line-height: 1.7;
     margin-bottom: 0;
 }
 
 /* 4. Brand Statement Section */
 .about-statement-section {
-    background: radial-gradient(circle at center, rgba(201, 149, 61, 0.12) 0%, transparent 70%), var(--black-soft);
+    background: radial-gradient(circle at center, var(--gold-glow) 0%, transparent 70%), var(--black-soft);
     border-bottom: 1px solid var(--border);
 }
 
@@ -3883,10 +3928,10 @@ img, video {
     max-width: 850px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    background: rgba(17, 17, 17, 0.7);
+    background: var(--card-black);
     border: 1px solid var(--border);
     border-radius: 6px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--card-shadow);
 }
 
 .statement-title {
@@ -3894,13 +3939,14 @@ img, video {
     line-height: 1.25;
     letter-spacing: 0.18em;
     margin: 1rem 0;
+    color: var(--white);
 }
 
 .statement-desc {
     font-size: 1.2rem;
     letter-spacing: 0.12em;
-    color: var(--gold-light);
-    font-weight: 500;
+    color: var(--gold-bright);
+    font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 0;
 }
@@ -3914,20 +3960,22 @@ img, video {
     max-width: 750px;
     margin: 0 auto;
     padding: 3.5rem 2.5rem;
-    background: linear-gradient(180deg, rgba(201, 149, 61, 0.05) 0%, rgba(5, 5, 5, 0.9) 100%);
+    background: linear-gradient(180deg, var(--gold-glow) 0%, var(--card-black) 100%);
     border: 1px solid var(--border);
     border-radius: 6px;
+    box-shadow: var(--card-shadow);
 }
 
 .cta-title {
     font-size: clamp(2rem, 3.5vw, 3rem);
     letter-spacing: 0.15em;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 
 .cta-text {
     font-size: 1.1rem;
-    color: #CBD5E1;
+    color: var(--gray);
     margin-bottom: 2rem;
 }
 
