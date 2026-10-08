@@ -1,6 +1,10 @@
-// ==========================================================================
-// WILD WOLVEN — MAIN JAVASCRIPT
-// ==========================================================================
+// Instant Theme Load to prevent flicker
+(function() {
+    const savedTheme = localStorage.getItem('wildWolvenTheme');
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Wild Wolven website loaded successfully.");
@@ -225,6 +229,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 350);
         }, 3000);
     };
+
+    // Theme Switcher Logic (Dark Mode / Light Mode)
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem('wildWolvenTheme') || 'dark';
+
+        const applyTheme = (theme) => {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            updateThemeUI(theme);
+        };
+
+        const updateThemeUI = (theme) => {
+            const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+            const themeModeTexts = document.querySelectorAll('#themeModeText');
+            const themeModeBadges = document.querySelectorAll('#themeModeBadge');
+
+            themeToggleBtns.forEach(btn => {
+                btn.setAttribute('title', theme === 'light' ? 'Switch to Dark Mode (Black & Gold)' : 'Switch to Light Mode (White & Gold)');
+            });
+
+            themeModeTexts.forEach(txt => {
+                txt.textContent = theme === 'light' ? 'Light Theme' : 'Dark Theme';
+            });
+
+            themeModeBadges.forEach(badge => {
+                badge.textContent = theme === 'light' ? 'LIGHT' : 'DARK';
+            });
+        };
+
+        const toggleTheme = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('wildWolvenTheme', newTheme);
+            applyTheme(newTheme);
+            showToast(`Switched to ${newTheme === 'light' ? 'Light Mode (White & Gold)' : 'Dark Mode (Black & Gold)'}`);
+        };
+
+        applyTheme(savedTheme);
+
+        document.addEventListener('click', (e) => {
+            const themeBtn = e.target.closest('.theme-toggle-btn') || e.target.closest('#mobileThemeToggleBtn');
+            if (themeBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleTheme();
+            }
+        });
+    };
+
+    initTheme();
 
     // 2. Sticky / Scroll Header Effect
     const handleHeaderScroll = () => {
